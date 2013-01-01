@@ -7,6 +7,7 @@
 //
 
 #import "testtryitAppDelegate.h"
+#import "AnnoncesPostController.h"
 
 @implementation testtryitAppDelegate
 
@@ -15,6 +16,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
+    UIViewController *controller=[[AnnoncesPostController alloc]init];
+	nav=[[UINavigationController alloc ]initWithRootViewController:controller ];
+	nav.view.backgroundColor=[UIColor clearColor];
+	nav.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	//	nav.navigationBar.tintColor=[UIColor grayColor];
+	
+	
+	nav.navigationBar.tintColor=[UIColor colorWithRed:0.149 green:0.175 blue:0.303 alpha:1.0];
+	//	[nav setNavigationBarHidden:YES ];
+	nav.navigationBar.translucent=NO;
+	[controller release ];
+	[self.window addSubview:nav.view];
+	
+	
+
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
@@ -61,6 +79,7 @@
 
 - (void)dealloc
 {
+    [nav release];
     [_window release];
     [super dealloc];
 }

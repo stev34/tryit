@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface testtryitAppDelegate : NSObject <UIApplicationDelegate> {
-
+    UINavigationController *nav;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
